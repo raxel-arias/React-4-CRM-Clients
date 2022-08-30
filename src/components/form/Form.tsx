@@ -11,15 +11,15 @@ const Form = (): JSX.Element => {
     const navigator = useNavigate();
 
     async function handleSubmit(data: IClient, {resetForm}: FormikHelpers<IClient>) {
-        const response = await clientsApiService.createClient(data);
+        try {
+            const response = await clientsApiService.createClient(data);
 
-        if (response.error) {
-            alert('hubo error');
-            return;
+            resetForm();
+            navigator('/clients');
+        } catch (error: any) {
+            alert('Hubo un error');
+            console.error(error);
         }
-
-        resetForm();
-        navigator('/clients');
     }
 
     return (
