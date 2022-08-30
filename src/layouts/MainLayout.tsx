@@ -7,7 +7,7 @@ const MainLayout = (): JSX.Element => {
 
             <Sidebar />
 
-            <div className="md:w-3/4 p-10 md:h-screen md:overflow-y-scroll">
+            <div className="md:w-3/4 p-10 md:h-screen overflow-x-hidden md:overflow-y-scroll">
                 <Outlet />
             </div>
         </div>
