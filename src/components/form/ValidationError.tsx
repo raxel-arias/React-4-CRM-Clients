@@ -1,4 +1,4 @@
-import {ValidationErrorCP} from "../../interfaces/components-props.interface";
+import {ValidationErrorCP} from "../../interfaces/form/form-component-props.interface";
 
 const ValidationError = (props: ValidationErrorCP): JSX.Element => {
 
