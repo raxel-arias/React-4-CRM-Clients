@@ -1,18 +1,16 @@
-import axios, {AxiosResponse} from 'axios';
+import axios from 'axios';
 import {CreateClientDto} from "./dto/create-client.dto";
+import {ClientGot} from "./dto/get-client.dto";
 
 export default class ClientsApiService {
     private API_URL = 'http://localhost:3000/api/v1/clients';
 
-    public getClients() {
+    public getClients(): Promise<ClientGot[]> {
         return new Promise(async (resolve, reject) => {
             try {
-                const {data, status} = await axios.get(this.API_URL);
+                const {data, status} = await axios.get<ClientGot[]>(this.API_URL);
 
-                resolve( {
-                    data,
-                    status
-                });
+                resolve(data);
             } catch (error: any) {
                 reject({
                     error
