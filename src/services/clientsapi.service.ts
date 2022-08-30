@@ -19,6 +19,20 @@ export default class ClientsApiService {
         })
     }
 
+    public getSingleClient(id: string): Promise<ClientGot> {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const {data} = await axios.get<ClientGot>(this.API_URL + `/${id}`);
+
+                resolve(data);
+            } catch(error: any) {
+                reject({
+                    error
+                });
+            }
+        });
+    }
+
     public createClient(createClientDto: CreateClientDto) {
         return new Promise(async (resolve, reject) => {
             try {
