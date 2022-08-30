@@ -1,11 +1,10 @@
 import Form from "../../components/form/Form";
+import Heading from "../../components/shared/Heading";
 
 const NewClient = (): JSX.Element => {
     return (
         <>
-            <h1 className={"font-black text-4xl text-center text-blue-900"}>New Client</h1>
-
-            <p className={"mt-3"}>Complete the fields to register a client:</p>
+            <Heading title={"New Client"} subtitle={"Complete the fields to register a client"} />
 
             <Form />
         </>
