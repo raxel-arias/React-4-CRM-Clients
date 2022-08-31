@@ -19,14 +19,14 @@ const Home = (): JSX.Element => {
                 console.error(error);
             }
         })();
-    }, []);
+    }, [clientsData]);
 
     return (
         <>
             <Heading title={"Clients"} subtitle={"Manage your clients"} />
 
             <div className="w-full overflow-x-scroll h-3/4">
-                <ClientsTable clientList={clientsData} />
+                <ClientsTable clientsDataState={{clientsData, setClientsData}} />
             </div>
         </>
     )
