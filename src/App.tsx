@@ -6,8 +6,7 @@ import {editClientRoute, homeRoute, newClientRoute, viewClientRoute} from './glo
 
 import Home from "./pages/home/Home";
 import NewClient from "./pages/home/NewClient";
-import EditClient from "./pages/home/EditClient";
-import ViewClient from "./pages/home/ViewClient";
+import ClientAux from "./pages/home/ClientAux";
 
 const App = (): JSX.Element => {
   return (
@@ -17,8 +16,9 @@ const App = (): JSX.Element => {
                 <Route index element={<Home />} />
 
                 <Route path={newClientRoute.substring(1)} element={<NewClient />} />
-                <Route path={editClientRoute.substring(1) + '/:id'} element={<EditClient />} />
-                <Route path={viewClientRoute.substring(1) + '/:id'} element={<ViewClient />} />
+                <Route path={editClientRoute.substring(1) + '/:id'} element={<ClientAux view={'edit'} />} />
+
+                <Route path={viewClientRoute.substring(1) + '/:id'} element={<ClientAux view={'view'} />} />
             </Route>
         </Routes>
       </Router>

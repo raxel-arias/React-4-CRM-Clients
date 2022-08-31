@@ -1,7 +1,15 @@
-const EditClient = (): JSX.Element => {
+import {EditClientCP} from "../../interfaces/home/pages.interface";
+import Heading from "../../components/shared/Heading";
+import Form from "../../components/form/Form";
+
+const EditClient = (props: EditClientCP): JSX.Element => {
+    const {client} = props;
+
     return (
         <div>
-            <h2>Edit Client</h2>
+            <Heading title={"Edit Client"} subtitle={"Complete the fields to update the client info"} />
+
+            <Form editing={true} clientToEdit={client} />
         </div>
     )
 }
