@@ -6,7 +6,7 @@ const NewClient = (): JSX.Element => {
         <>
             <Heading title={"New Client"} subtitle={"Complete the fields to register a client"} />
 
-            <Form />
+            <Form editing={false} />
         </>
     )
 }
