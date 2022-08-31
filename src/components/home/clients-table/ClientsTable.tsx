@@ -4,7 +4,10 @@ import Client from "./Client";
 
 const ClientsTable = (props: ClientsTableCP): JSX.Element => {
 
-    const {clientList} = props;
+    const {
+        clientsDataState,
+        clientsDataState: {clientsData}
+    } = props;
 
     return (
         <table className="w-full bg-white">
@@ -18,7 +21,9 @@ const ClientsTable = (props: ClientsTableCP): JSX.Element => {
             </thead>
 
             <tbody>
-            {clientList.map((client: ClientGot) => <Client key={client._id} client={client} />)}
+            {clientsData.map((client: ClientGot) =>
+                <Client key={client._id} client={client} clientsDataState={clientsDataState} />
+            )}
             </tbody>
         </table>
     )
