@@ -1,5 +1,5 @@
-import {ClientGot} from "../../../services/dto/get-client.dto";
+import {ClientsDataState} from "../../state/states.interface";
 
 export interface ClientsTableCP {
-    clientList: ClientGot[]
+    clientsDataState: ClientsDataState;
 }
